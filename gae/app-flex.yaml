@@ -1,0 +1,19 @@
+# for felx env
+runtime: custom
+env: flex
+service: go-hello-flex
+
+handlers:
+  - url: /.*
+    script: auto
+
+network:
+  name: default
+
+env_variables:
+  PORT: "8080"
+
+# Input commands
+# $ gcloud auth login
+# $ gcloud config set project {YOUR_PROJECT_ID}
+# $ gcloud app deploy --project [YOUR_PROJECT_ID] --version flex

@@ -1,0 +1,21 @@
+# for standard env
+runtime: go113
+service: go-hello
+# 初回のみ
+# service: default
+
+automatic_scaling:
+  max_instances: 1
+  min_instances: 0
+
+handlers:
+  - url: /.*
+    script: auto
+
+env_variables:
+  PORT: "8080"
+
+#  Input commands
+# $ gcloud auth login
+# $ gcloud config set project {YOUR_PROJECT_ID}
+# $ gcloud app deploy --project [YOUR_PROJECT_ID]
